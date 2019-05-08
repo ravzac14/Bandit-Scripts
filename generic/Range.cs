@@ -11,5 +11,9 @@ namespace generic {
 			this.max = max;
 			this.min = min;
 		}
+		
+		public bool contains(int i) {
+			return (min <= i) && (max >= i);
+		}
 	}
 }

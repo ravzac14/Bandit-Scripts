@@ -1,9 +1,31 @@
 namespace entities {
-  using entities.gear;
+	using entities.gear;
 	using generic;
+	using System;
 	using System.Collections.Generic;
-	using UnityEngine.Assertions;
+	using UnityEngine;
+	
+	public enum EntityType { Unknown, Player, NPC, Breakable }
 
+	// TODO(zack): Add to these when you have a better idea of what goes in these
+	[Serializable]
+	public class Entity {
+
+		public EntityType entityType;
+		public GameObject gameObject;
+		
+		public Entity() {
+			entityType = EntityType.Unknown;
+			gameObject = new GameObject();
+		}
+		
+		public Entity(EntityType newEntityType, GameObject newGameObject) {
+			entityType = newEntityType;
+			gameObject = newGameObject;
+		}
+	}
+	
+	/* TODO(zack): This is all bad. Refactor to components
 	public enum Faction { Ally, Neutral, Enemy }
 	
 	public abstract class Entity {
@@ -75,5 +97,5 @@ namespace entities {
 			this.mainHandSlot = mainHandSlot;
 			this.offHandSlot = offHandSlot;
 		}
-	}
+	} */
 }

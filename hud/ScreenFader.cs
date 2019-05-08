@@ -3,6 +3,7 @@
 	using System.Collections.Generic;
 	using UnityEngine;
 
+	// TODO(zack): Decide if this is a singleton
 	public class ScreenFader : MonoBehaviour {
 
 		Animator animator;
